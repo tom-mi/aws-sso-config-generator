@@ -11,7 +11,7 @@ class ConfigWriter:
         self.output = output
 
     def write_profile(self, account: Account, role: AccountRole):
-        config = f'[profile {account.account_name}-{role.role_name}]\n'
+        config = f'[profile {account.account_name.replace(" ", "")}-{role.role_name}]\n'
         config += f'sso_start_url = {self.sso_start_url}\n'
         config += f'sso_region = {self.sso_region}\n'
         config += f'sso_account_id = {account.account_id}\n'
